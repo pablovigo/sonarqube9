@@ -27,7 +27,7 @@ RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube
 
 WORKDIR /opt
 
-COPY --from=basecurl /opt/sonarqube-enterprise-7.9.2.zip .
+COPY --from=basecurl /opt/sonarqube.zip .
 RUN set -eux; \
     unzip sonarqube.zip; \
     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube; \
